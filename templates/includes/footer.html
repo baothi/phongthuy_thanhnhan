@@ -1,0 +1,82 @@
+{% load static %}
+ <!-- Footer Start -->
+ <div class="container-fluid bg-primary text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Quang Trung, Tp.HCM, Việt Nam</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0906 999 888</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>aaaa@example.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a class="btn btn-link" href="">Giới thiệu</a>
+                <a class="btn btn-link" href="">Điều khoản sử dụng</a>
+                <a class="btn btn-link" href="">Our Services</a>
+                <a class="btn btn-link" href="">Chính sách bảo mật</a>
+                <a class="btn btn-link" href="">Chính sách bán hàng</a>
+                <a class="btn btn-link" href="">Liên hệ</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a class="btn btn-link" href="">Lập lá số Bát tự</a>
+                <a class="btn btn-link" href="">Lập lá số Tử vi</a>
+                <a class="btn btn-link" href="">Lịch Âm – Dương</a>
+                <a class="btn btn-link" href="">Bát Trạch</a>
+                <a class="btn btn-link" href="">Xem ngày tốt xấu</a>
+                <a class="btn btn-link" href="">Tìm Số tài khoản hợp mệnh</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href="#">NguyenThanhNhan</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-light btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="{% static 'lib/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'lib/jquery.amlich.min.js' %}"></script>
+<script src="{% static 'lib/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    $(function() {
+        $('#amlichmonth').amLich({
+            type: 'month',
+            tableWidth: '100%'
+        });
+        $('#amlichcalendar').amLich({
+            type: 'calendar',
+            tableWidth: '100%'
+        });
+    });
+</script>
+</body>
+
+</html>
