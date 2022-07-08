@@ -99,7 +99,7 @@ volumes:
 # docker-compose run web python manage.py collectstatic
 # docker-compose run web python manage.py startapp kinhdich
 # sudo chmod -R 777 admin
-# sudo chown -R baothi:baothi category tintuc
+# sudo chown -R baothi:baothi category
 # asgiref==3.2.10
 # django-appconf==1.0.4
 # django-icons==2.2.1
