@@ -1,0 +1,2 @@
+INSERT INTO public.auth_user(password,is_superuser,username,first_name, last_name, email,is_staff,date_joined, is_active)
+VALUES('admin@123', false, 'admin', 'Admin','', 'admin@gmail.com',false, '2022-07-07', true);

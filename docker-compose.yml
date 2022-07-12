@@ -93,13 +93,13 @@ volumes:
 # python manage.py collectstatic
 # docker-compose -f production.yml up -d
 # docker-compose run web /usr/local/bin/python manage.py migrate
-# docker-compose run web /usr/local/bin/python manage.py makemigrations tintuc
+# docker-compose run web /usr/local/bin/python manage.py makemigrations
 # docker-compose run web python manage.py createsuperuser
 # sudo chmod 666 /var/run/docker.sock
 # docker-compose run web python manage.py collectstatic
 # docker-compose run web python manage.py startapp kinhdich
 # sudo chmod -R 777 admin
-# sudo chown -R baothi:baothi category tintuc
+# sudo chown -R baothi:baothi category
 # asgiref==3.2.10
 # django-appconf==1.0.4
 # django-icons==2.2.1
