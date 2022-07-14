@@ -10,17 +10,21 @@
           <div class="col-12 pb-3 d-flex align-items-center justify-content-center">
               <div class="col-6  text-center">
                   <h2>Đăng Nhập</h2>
-                  <form>
+                  <form method="POST" action="" name="login" enctype="multipart/form-data" name="change-form">
+                    {% csrf_token %}
                     <div class="row g-3">
                       <div class="col-12 col-sm-12">
-                          <input type="text" class="form-control" placeholder="Tài khoản" required="true">
+                          <input type="text" id="username" name="username" class="form-control" placeholder="Tài khoản" required="true">
                       </div>
                       <div class="col-12 col-sm-12">
-                          <input type="password" class="form-control" placeholder="Mật khẩu" required="true">
+                          <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu" required="true">
                       </div>                      
                       <div class="col-12 text-center">
                         <button class="btn btn-primary py-3 px-5" type="submit">Đăng Nhập</button>
-                    </div>
+                      </div>                      
+                      <div class="col-12 text-center text-danger fw-bold jsalert">
+                        
+                      </div>
                     </div>
                   </form>
               </div>
@@ -31,4 +35,27 @@
   </div>
 </div>
 <!-- Content End -->
+
+<script>
+  status = '{{status}}';
+  if(status == 'False'){
+    $('.jsalert').html('Tài Khoản hoặc Mật Khẩu không đúng.')
+  }
+  $("form[name=login]").on('submit', function(e) {
+    $.ajax({
+      url: '/myadmin/login',
+      data: new FormData(this),
+      type: 'POST',
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+         // no action 
+      },
+      error: function() {
+          alert('An error has occurred');
+      }
+    });
+  });
+</script>
 {% endblock%}

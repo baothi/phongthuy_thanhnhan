@@ -1,2 +1,2 @@
 INSERT INTO public.auth_user(password,is_superuser,username,first_name, last_name, email,is_staff,date_joined, is_active)
-VALUES('admin@123', false, 'admin', 'Admin','', 'admin@gmail.com',false, '2022-07-07', true);
+VALUES('pbkdf2_sha256$320000$uuypfm58s0hHUlq1XsMTAR$78aqtjEy/kkDJ0mLmv8ARzQhZAt7KsshB4G2+YHQnto=', true, 'admin', 'Admin','', 'admin@gmail.com',false, '2022-07-07', true);
