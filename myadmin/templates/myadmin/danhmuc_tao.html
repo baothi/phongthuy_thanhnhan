@@ -1,0 +1,45 @@
+{% extends 'myadmin_base.html' %}
+{% load static %}
+{% block content %}
+<!-- Content Start -->
+<div class="container-xxl py-4 pt-5">
+  <div class="row g-4">
+    <div class="col-sm-12">
+      <!-- Bat Tu Start -->
+      <div class="col-sm-12 pb-5">
+          <div class="col-12 pb-3" style="min-height:500px">
+              <div class="col-12">
+                  <h2>Bài Viết</h2>
+              </div>
+              <div class="col-12 py-4">
+                <form method="POST" action="/myadmin/baiviet_tao" name="form">
+                  {% csrf_token %}
+                  <div class="row">
+                    Tên Danh mục
+                    {{ dm_form.ten }}
+                    {{ dm_form.ten.errors }}
+                  </div>
+                  <div class="row py-1">
+                    Miêu tả
+                    {{ dm_form.mieuta }}
+                    {{ dm_form.mieuta.errors }}
+                  </div>
+                  <div class="row py-1">
+                    Trạng thái
+                    {{ dm_form.trangthai }}
+                    {{ dm_form.trangthai.errors }}
+                  </div>
+                  <div class="py-3 text-end">
+                    <button type="submit" class="btn btn-primary">Tạo Mới</button>
+                    <a class="btn btn-secondary" href="/myadmin/baiviet">Trở Lại</a>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+      <!-- Bat Tu End -->
+    </div>
+  </div>
+</div>
+<!-- Content End -->
+{% endblock%}
