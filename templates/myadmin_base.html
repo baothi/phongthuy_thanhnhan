@@ -31,10 +31,14 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/jquery.amlich.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">    
+    <!-- JavaScript Libraries -->
+    <script src="{% static 'lib/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'lib/jquery.amlich.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap.bundle.min.js' %}"></script>
 </head>
 
-<body>
+<body class="myadmin">
 
   
     {% include 'includes/myadmin_navbar.html' %}

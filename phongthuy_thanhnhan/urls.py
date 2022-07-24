@@ -18,10 +18,13 @@ from django.urls import include, path, re_path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth.decorators import user_passes_test
 
 urlpatterns = [
+    path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     re_path(r'^tintuc/', include('tintuc.urls')),
     re_path(r'^myadmin/', include('myadmin.urls')),
-]
+    
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

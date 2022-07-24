@@ -1,0 +1,73 @@
+{% extends 'myadmin_base.html' %}
+{% load static %}
+{% load custom_templatetag %}
+{% block content %}
+<!-- Content Start -->
+<div class="container-xxl py-4 pt-5">
+  <div class="row g-4">
+    <div class="col-sm-12">
+      <!-- Bat Tu Start -->
+      <div class="col-sm-12 pb-5">
+          <div class="col-12 pb-3" style="min-height:500px">
+              <div class="col-12">
+                  <h2>Danh Mục Bài Viết</h2>
+              </div>
+              <div class="col-12 py-4">
+                <form role="form" method="post" enctype="multipart/form-data" action="/myadmin/baiviet_tao" name="form" id="form">
+                  
+                  <div class="row">
+                    Danh mục tin tức
+                    {{ dm_form.danhsachtintuc }}
+                    {{ dm_form.danhsachtintuc.errors }}
+                  </div>
+                  <div class="row">
+                    Tiêu đề
+                    {{ dm_form.ten }}
+                    {{ dm_form.ten.errors }}
+                  </div>
+                  <div class="row py-1">
+                    <table>
+                      <tr>
+                        <td>                          
+                          Hình ảnh (Kích cở ngang x cao: 850 x 450 px)<br/>
+                          {{ dm_form.hinhanh }}
+                          {{ dm_form.hinhanh.errors }}
+                        </td>
+                        <td>
+                          <img src="{{obj_model.hinhanh|img_path_remove_code}}" alt="" style="max-width: 200px;"/>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </div>
+                  <div class="row py-1">
+                    Miêu tả
+                    {{ dm_form.mieuta }}
+                    {{ dm_form.mieuta.errors }}
+                  </div>
+                  <div class="row py-1">
+                    Nội dung
+                    {{ dm_form.noidung }}
+                    {{ dm_form.noidung.errors }}
+                  </div>
+                  <div class="row py-1">
+                    Trạng thái
+                    {{ dm_form.trangthai }}
+                    {{ dm_form.trangthai.errors }}
+                  </div>
+                  <div class="py-3 text-end">
+                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                    <a class="btn btn-secondary" href="/myadmin/danhmuc">Trở Lại</a>
+                  </div>
+                  {% csrf_token %}
+                </form>
+              </div>
+          </div>
+      </div>
+      <!-- Bat Tu End -->
+    </div>
+  </div>
+</div>
+<!-- Content End -->
+
+{% endblock%}

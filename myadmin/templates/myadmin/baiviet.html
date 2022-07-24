@@ -1,5 +1,6 @@
 {% extends 'myadmin_base.html' %}
 {% load static %}
+{% load custom_templatetag %}
 {% block content %}
 <!-- Content Start -->
 <div class="container-xxl py-4 pt-5">
@@ -18,17 +19,21 @@
                   <table class="tbl">
                     <thead>
                       <th>Tên Danh Mục</th>
+                      <th>Tên Bài Viết</th>
                       <th>Mô Tả</th>
                       <th>Ngày Tạo</th>
+                      <th>Hình Đại Diện</th>
                       <th>Trạng Thái</th>
                       <th></th>
                     </thead>
                     <tbody>
-                      {% for obj in danhmuc_list %}
+                      {% for obj in baiviet_list %}
                         <tr>
                           <td class="fw-bold">{{obj.ten}}</td>
+                          <td>{{obj.danhsachtintuc.ten}}</td>
                           <td>{{obj.mieuta}}</td>
                           <td>{{obj.ngaytao|date:"d-m-Y"}}</td>
+                          <td><img src="{{obj.hinhanh|img_path_remove_code}}" alt="" width="70"/></td>
                           <td>
                             {% if obj.trangthai %}
                               Hoạt động
@@ -36,7 +41,7 @@
                               Không hoạt động
                             {% endif %}
                           </td>
-                          <td class="fw-bold"><a href="/myadmin/danhmuc_sua/{{obj.id}}">Sửa</a> | 
+                          <td class="fw-bold"><a href="/myadmin/baiviet_sua/{{obj.id}}">Sửa</a> | 
                             <a href="javascript:void(0)" onclick="del('{{obj.id}}')">Xóa</a></td>
                         </tr>
                       {% endfor %}
@@ -54,7 +59,7 @@
 <script>
   function del(id){
     if (confirm('Bạn chắc chắn muốn xóa?')) {
-        location.href='/myadmin/danhmuc_xoa/'+id;
+        location.href='/myadmin/baiviet_xoa/'+id;
     }
     else {
         return false;

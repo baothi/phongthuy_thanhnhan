@@ -766,3 +766,17 @@
         position: relative;
     }
 }
+
+/* ======================================== ADMIN ===================================== */
+.myadmin .tbl{
+	width: 100%;
+}
+.myadmin .tbl th{
+	border: solid 1px #333;
+    padding: 3px 3px;
+    font-weight: bold;
+}
+.myadmin .tbl td{
+	border: solid 1px #333;
+    padding: 3px 3px;
+}

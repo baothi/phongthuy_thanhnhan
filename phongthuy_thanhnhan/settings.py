@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'myadmin',
     'tintuc',
+    'django_summernote',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'session_security.middleware.SessionSecurityMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
 
 ROOT_URLCONF = 'phongthuy_thanhnhan.urls'
@@ -68,11 +71,28 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries':{
+                'custom_templatetag': 'phongthuy_thanhnhan.templatetags.custom_templatetag',
+            }
         },
     },
 ]
 
 WSGI_APPLICATION = 'phongthuy_thanhnhan.wsgi.application'
+
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+#SESSION AGE 60 Minutes
+SESSION_COOKIE_AGE = 60*60
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+COOKIE_TIME_OUT = 60*60*24*7 #7 days
+# Session Time out
+SESSION_SECURITY_WARN_AFTER = 55*60
+SESSION_SECURITY_EXPIRE_AFTER = 60*60
+SESSION_SECURITY_PASSIVE_URLS = ['/myadmin/check_session/']
+
+SESSION_EXPIRE_SECONDS = 3600 * 24  # 24 hour
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+SESSION_TIMEOUT_REDIRECT = '/myadmin/check_session/'
 
 
 # Database
@@ -129,6 +149,10 @@ STATIC_ROOT = BASE_DIR /'static'
 STATICFILES_DIRS = [
     'phongthuy_thanhnhan/static',
 ]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

@@ -12,8 +12,13 @@
                   <h2>Danh Mục Bài Viết</h2>
               </div>
               <div class="col-12 py-4">
-                <form method="POST" action="/myadmin/danhmuc_tao" name="form">
-                  {% csrf_token %}
+                <form role="form" method="post" enctype="multipart/form-data" action="/myadmin/baiviet_tao" name="form" id="form">
+                  
+                  <div class="row">
+                    Danh mục tin tức
+                    {{ dm_form.danhsachtintuc }}
+                    {{ dm_form.danhsachtintuc.errors }}
+                  </div>
                   <div class="row">
                     Tiêu đề
                     {{ dm_form.ten }}
@@ -43,6 +48,7 @@
                     <button type="submit" class="btn btn-primary">Tạo Mới</button>
                     <a class="btn btn-secondary" href="/myadmin/danhmuc">Trở Lại</a>
                   </div>
+                  {% csrf_token %}
                 </form>
               </div>
           </div>
@@ -52,4 +58,5 @@
   </div>
 </div>
 <!-- Content End -->
+
 {% endblock%}

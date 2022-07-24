@@ -5,8 +5,9 @@ def check_login(re):
         userExist = re.session['admin']
     except:
         pass
+    print('userExist==========',userExist)
     #go
-    if userExist == 'admin':
+    if str(userExist) == 'admin':
         return True
     else:
         return False
